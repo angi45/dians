@@ -1,0 +1,16 @@
+Регистрирање на корисник
+Register Controller - Register Service - User Repository
+При процесот на регистрација, Register Controller го прифаќа барањето од MVC Controller и го проследува до Register Service. Во овој сервис се проверува валидноста на внесените податоци, по што информациите се зачувуваат во базата на податоци. Зачувувањето го извршува User Repository.
+
+Најава на корисник
+Login Controller - Login Service - User Repository
+При најава, Login Controller го презема барањето од MVC Controller и го проследува до Login Service, каде што се врши автентикација и авторизација на корисникот. User Repository се користи за извлекување на потребните информации од базата на податоци. Целиот процес е поддржан со Spring Security.
+
+Пребарување на компании и предвидување на акции
+Profile Controller - Profile Service - LSTM Service - Profile/Trade History Repository
+Кога корисникот пребарува компании, Profile Controller го прима барањето од MVC Controller и го предава на Profile Service, каде што се наоѓа клучната бизнис логика на апликацијата. Овде се селектира компанијата и се повлекуваат нејзините историски податоци преку Profile Repository и Trade History Repository. Потоа, се испраќа барање до LSTM Service, кој врши предвидување на цената на акциите за следниот месец за избраната компанија.
+
+Користени технологии
+Frontend: Bootstrap, Thymeleaf
+Backend: Spring Boot и Python
+База на податоци: PostgreSQL
